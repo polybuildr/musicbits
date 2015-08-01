@@ -2,7 +2,7 @@ var Note = require('./note.js')
     , EventEmitter = require('events').EventEmitter
     , util = require('util')
 
-function Instrument(melody) {
+function Instrument(melody, adsrConfig, fullNoteDuration) {
     EventEmitter.call(this)
     function frequency(key) {
         return Math.pow(2, (key - 49) / 12) * 440
@@ -22,8 +22,16 @@ function Instrument(melody) {
         r: 0.05
     }
 
-    var adsrConfig = pianoConfig
-    var fullNoteDuration = 0.3
+    if (adsrConfig == 'piano') {
+        adsrConfig = pianoConfig
+    }
+    else if (adsrConfig == 'flute') {
+        adsrConfig = fluteConfig
+    }
+    else {
+        adsrConfig = pianoConfig
+    }
+    fullNoteDuration = fullNoteDuration || 0.3
 
     var notes = [];
 
