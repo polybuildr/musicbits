@@ -22,8 +22,12 @@ A simple ADSR envelope, where:
 - duration: duration in seconds
 - adsrConfig: JSON object with keys `a`, `d`, `s` and `r` to pass to `musicbits.ADSR`
 
-### musicbits.Instrument(melody)
+### musicbits.Instrument(melody, adsrConfig, fullNoteDuration)
 
 - melody: an array container integers representing note indices or arrays of two elements each, first being the note index and second being the duration
 
-For example, the melody argument `[40, [41, 2], 42]` would play note 40 for one note duration, note 41 for 2 notes duration and then 42 for one note duration
+  For example, the melody argument `[40, [41, 2], 42]` would play note 40 for one note duration, note 41 for 2 notes duration and then 42 for one note duration
+
+- adsrConfig (_optional_): A string, either `piano` or `flute` or a JSON object with keys `a`, `d`, `s` and `r` to pass to `musicbits.ADSR`
+
+- fullNoteDuration (_optional_): Length of a normal length note in seconds
