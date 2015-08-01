@@ -1,0 +1,11 @@
+{
+  "name": "musicbits",
+  "version": "1.0.0",
+  "description": "Node library to create music using baudio.",
+  "main": "index.js",
+  "keywords": [
+    "music"
+  ],
+  "author": "Vivek Ghaisas",
+  "license": "MIT"
+}
