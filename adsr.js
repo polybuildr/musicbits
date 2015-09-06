@@ -5,9 +5,9 @@ module.exports = function(a, d, s, r) {
     this.releaseDuration = r
 
     var attackTime = false
-      , releaseTime = false
-      , active = false
-      , level = 0
+        , releaseTime = false
+        , active = false
+        , level = 0
 
     this.attack = function(t) {
         attackTime = t

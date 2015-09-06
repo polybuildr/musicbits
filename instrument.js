@@ -37,14 +37,10 @@ function Instrument(melody, adsrConfig, fullNoteDuration) {
 
     for (var i = 0; i < melody.length; i++) {
         var note = melody[i]
-        if (note.length > 1) {
-            var freq = frequency(note[0])
-            var duration = +note[1] * fullNoteDuration
-        }
-        else {
-            var duration = fullNoteDuration
-            var freq = frequency(note)
-        }
+
+        var freq = frequency(note.key)
+        var duration = (note.duration || 1) * fullNoteDuration
+
         notes.push(new Note(freq, duration, adsrConfig))
     }
     var playingIndex = 0

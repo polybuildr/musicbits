@@ -3,11 +3,11 @@ var ADSR = require('./adsr.js')
 
 module.exports = function(freq, duration, adsrConfig) {
     var freq = freq
-      , duration = duration
-      , startTime = false
-      , released = false
-      , attacked = false
-      , adsr = new ADSR(adsrConfig.a, adsrConfig.d, adsrConfig.s, adsrConfig.r)
+        , duration = duration
+        , startTime = false
+        , released = false
+        , attacked = false
+        , adsr = new ADSR(adsrConfig.a, adsrConfig.d, adsrConfig.s, adsrConfig.r)
 
     this.active = function() {
         return adsr.active()

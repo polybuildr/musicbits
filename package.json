@@ -1,6 +1,6 @@
 {
   "name": "musicbits",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Node library to create music using baudio.",
   "main": "index.js",
   "keywords": [
