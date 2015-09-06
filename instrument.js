@@ -41,7 +41,18 @@ function Instrument(melody, adsrConfig, fullNoteDuration) {
         var freq = frequency(note.key)
         var duration = (note.duration || 1) * fullNoteDuration
 
-        notes.push(new Note(freq, duration, adsrConfig))
+        if (note.sustain) {
+            var sustainADSRConfig = {
+                a: adsrConfig.a,
+                d: adsrConfig.d,
+                s: adsrConfig.s,
+                r: adsrConfig.r * 5
+            }
+            notes.push(new Note(freq, duration, sustainADSRConfig))
+        }
+        else {
+            notes.push(new Note(freq, duration, adsrConfig))
+        }
     }
     var playingIndex = 0
     this.value = function(t) {
