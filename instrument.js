@@ -89,5 +89,7 @@ util.inherits(Instrument, EventEmitter)
 util.inherits(Piano, Instrument)
 util.inherits(Flute, Instrument)
 
-module.exports.Instrument = Instrument
-module.exports.Piano = Piano
+module.exports = {
+    Instrument: Instrument,
+    Piano: Piano
+}
