@@ -1,7 +1,9 @@
 var ADSR = require('./adsr.js')
-var Note = require('./note.js')
-var Instrument = require('./instrument.js')
+    , Instrument = require('./instrument.js')
+    , Note = require('./note.js')
 
-module.exports.ADSR = ADSR
-module.exports.Note = Note
-module.exports.Instrument = Instrument
+module.exports = {
+    ADSR: ADSR,
+    Instrument: Instrument,
+    Note: Note
+}
